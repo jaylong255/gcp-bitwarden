@@ -31,3 +31,26 @@ ___
 These docs contain a CI/CD quickstart for small sample projects 
 
 ---
+
+## Requirements
+- [Google Cloud CLI](https://cloud.google.com/sdk/gcloud)
+- [Terraform](https://www.terraform.io/)
+
+## Getting Set Up
+
+> While I usually like to have CI/CD set up with Terraform and Terraform Cloud, for the sake of a rapid research turnaround, I'm saving state to a bucket. 
+
+***NOTE: while an even faster way would be to use local state, I tend to jump from my office machine to my mobile so it'll be nice to be able to access state from a common source. TF Cloud has an extra auth step and I'm likely to always be the sole contributor here.***
+
+### Manual Steps Taken
+
+1. **Authenticate with Google**: from the gcloud cli, run the command below.
+    - `gcloud auth login`
+2. Create a Project
+
+```bash
+# Inialize Terraform
+terraform init
+
+
+```
