@@ -52,8 +52,12 @@ These docs contain a CI/CD quickstart for small sample projects
     - `gcloud config set project cyberworld-bitwarden-test-2`
 4. **Retrieve Your Organization ID**
     - `gcloud organizations list`
-5. **Create a Folder to Store Terraform state**: Remeber, you can also just store the state to a local file if you're going to be working alone on a single machine. Or you can take extra steps to set up Terraform Cloud and CI/CD with GitHub actions. I highly recommend this practice on actual teams. 
+5. **Create a Folder to Contain the Project**: 
     - `gcloud resource-manager folders create --display-name="BitWarden Test" --organization=306636251100`
+6. **Make Sure Billing Is Enabled**: If you don't have an active billing account, set one up [here](https://console.cloud.google.com/billing). This will enable billing so that you can do stuff.
+7. **Activate Billing**
+7. **Create a Bucket to Save Terraform State**: Remeber, you can also just store the state to a local file if you're going to be working alone on a single machine. Or you can take extra steps to set up Terraform Cloud and CI/CD with GitHub actions. I highly recommend this practice on actual teams. 
+    - `gcloud storage buckets create gs://cyberworld-research-tfstate`
 
 ### Terraform Commands
 
