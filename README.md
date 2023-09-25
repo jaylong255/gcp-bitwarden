@@ -46,7 +46,16 @@ These docs contain a CI/CD quickstart for small sample projects
 
 1. **Authenticate with Google**: from the gcloud cli, run the command below.
     - `gcloud auth login`
-2. Create a Project
+2. **Create a Project**: Use the below command to create a project to work with. Make sure you change the id to make it unique. Replace "CyberWorld" with your own company or project or whatever is your own. Make sure to note the output of the command. You may need the unique identifier later.
+    - `gcloud projects create cyberworld-bitwarden-test-2 --name="BitWarden Test" --labels=type=research,temp=1`
+3. **Select the Project**: Use the below command to select the project you just created. Don't forget to change the id to match the actual project you just created.
+    - `gcloud config set project cyberworld-bitwarden-test-2`
+4. **Retrieve Your Organization ID**
+    - `gcloud organizations list`
+5. **Create a Folder to Store Terraform state**: Remeber, you can also just store the state to a local file if you're going to be working alone on a single machine. Or you can take extra steps to set up Terraform Cloud and CI/CD with GitHub actions. I highly recommend this practice on actual teams. 
+    - `gcloud resource-manager folders create --display-name="BitWarden Test" --organization=306636251100`
+
+### Terraform Commands
 
 ```bash
 # Inialize Terraform
